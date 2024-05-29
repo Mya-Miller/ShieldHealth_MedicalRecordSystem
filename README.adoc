@@ -52,4 +52,4 @@ pip install -r requirements.txt
 * link:https://myunt-my.sharepoint.com/:b:/r/personal/myamiller_my_unt_edu/Documents/CSCE%205430%20-%20Software%20Engineering/Group18-Workbook.pdf?csf=1&web=1&e=iXejkD[Work Book]
 * Demo
 +
-image::https://github.com/karthikv142/SE_Spring24/blob/main/DemoVideo.png[link=https://youtu.be/qLYc5d8SAsg]
+image::https://github.com/Mya-Miller/ShieldHealth_MedicalRecordSystem/blob/main/DemoVideo.png[link=https://youtu.be/qLYc5d8SAsg]
