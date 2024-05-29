@@ -19,7 +19,7 @@ image:https://github.com/Mya-Miller/ShieldHealth_MedicalRecordSystem/blob/main/G
 concept,480]
 
 === Informational Architecture Diagram
-image:https://github.com/karthikv142/SE_Spring24/blob/main/Information%20Architecture%20Diagram%20.png[
+image:https://github.com/Mya-Miller/ShieldHealth_MedicalRecordSystem/blob/main/Information%20Architecture%20Diagram%20.png[
 concept,650]
 
 
