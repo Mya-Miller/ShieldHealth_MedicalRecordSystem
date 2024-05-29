@@ -1,0 +1,55 @@
+= Shield Health: Medical Record System
+:toc:
+:toc-placement: preamble
+:toclevels: 2
+
+// Need some preamble to get TOC:
+{empty}
+
+== Introduction
+=== What is Shield Health?
+
+Shield Health is a medical record system that allows doctors and hospital staff to manage their patients, appointments, and medication. Shield health ensures security through the implementation of the least privilege principle. This means users are granted access only to the resources and functionalities essential for their designated roles, which lowers the risk of unauthorized access or misuse.
+
+
+== Architecture
+
+=== General Architecture Diagram
+image:https://github.com/karthikv142/SE_Spring24/blob/main/General%20Architecture%20Diagram%20.png[
+concept,480]
+
+=== Informational Architecture Diagram
+image:https://github.com/karthikv142/SE_Spring24/blob/main/Information%20Architecture%20Diagram%20.png[
+concept,650]
+
+
+
+== Shield Health Website Access Instructions
+
+=== Prerequisites
+* link:https://www.python.org/downloads/[Install Python 3.9 or above]
+* link:https://www.jetbrains.com/pycharm/[Install PyCharm]
+* Install requirements:
+[source,bash]
+----
+pip install -r requirements.txt
+----
+
+
+=== Deployment
+. Open PyCharm.
+. Pull the latest main branch.
+. Open main.py 
+  * ShieldHealth -> source_code -> main.py
+. Run main.py
+. Select the link provided in the console.
+
+
+== Shield Health Usage
+
+* link:https://github.com/karthikv142/SE_Spring24/blob/main/Unit%20Testing.pdf[Unit Testing]
+* link:https://docs.google.com/presentation/d/1Hqf7ETO9h5WN_-Qd9ig1WNhwUA31Z7CfSVk_nfPEogM/edit?usp=sharing[Presentation Slides]
+* link:https://myunt-my.sharepoint.com/:b:/r/personal/myamiller_my_unt_edu/Documents/CSCE%205430%20-%20Software%20Engineering/Group18-Workbook.pdf?csf=1&web=1&e=iXejkD[Work Book]
+* Demo
++
+image::https://github.com/karthikv142/SE_Spring24/blob/main/DemoVideo.png[link=https://youtu.be/qLYc5d8SAsg]
