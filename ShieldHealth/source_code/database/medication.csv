@@ -1,7 +1,0 @@
-MedicationID,MedicationName,MedicationRecipient,MedicationRefills,MedicationLastPassed,MedicationParameters,MedicationPharmacologicalClass,MedicationPrescribedBy,MedicationDose,MedicationFrequency
-M1,Lisinopril,John Doe,5,2023-09-15,BP,Ace Inhibitor,Dr. Smith,10mg,Once Daily
-M2,Atorvastatin,Jane Doe,2,2023-09-10,Cholesterol,Statins,Dr. Jones,20mg,Once Daily
-M3,Levothyroxine,Alice Smith,4,2023-09-18,TSH,Thyroid Medication,Dr. Brown,50mcg,Once Daily
-M4,Metformin,Bob White,3,2023-09-12,Blood Sugar,Biguanide,Dr. Green,500mg,Twice Daily
-M5,Amlodipine,Charlie Black,6,2023-09-14,BP,Calcium Channel Blocker,Dr. White,5mg,Once Daily
-M6,test meds add,,20,,,test class,,,
