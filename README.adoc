@@ -15,7 +15,7 @@ Shield Health is a medical record system that allows doctors and hospital staff 
 == Architecture
 
 === General Architecture Diagram
-image:https://github.com/karthikv142/SE_Spring24/blob/main/General%20Architecture%20Diagram%20.png[
+image:https://github.com/Mya-Miller/ShieldHealth_MedicalRecordSystem/blob/main/General%20Architecture%20Diagram%20.png[
 concept,480]
 
 === Informational Architecture Diagram
