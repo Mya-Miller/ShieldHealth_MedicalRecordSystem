@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shield Health</title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1 class="title">Shield Health</h1>
+    </header>
+
+    <div class="navbarC">
+         <div class="navbarC-items">
+            <!-- Using Unicodes for collapsable sidebar-->
+           {% if access %}
+                {% if access == 'A' %}
+                    <a href="{{ url_for('patients') }}"><span class="icon">&#x1F465;</span><span class="text"> Patients</span></a>
+                    <a href="{{ url_for('medication') }}"><span class="icon">&#x1F48A;</span><span class="text"> Medication</span></a>
+                    <a href="{{ url_for('appointments') }}"><span class="icon">&#x1F4C5;</span><span class="text"> Appointments</span></a>
+                {% elif access == 'D' %}
+                    <a href="{{ url_for('patients') }}"><span class="icon">&#x1F465;</span><span class="text"> Patients</span></a>
+                    <a href="{{ url_for('medication') }}"><span class="icon">&#x1F48A;</span><span class="text"> Medication</span></a>
+                {% elif access == 'H' %}
+                    <a href="{{ url_for('patients') }}"><span class="icon">&#x1F465;</span><span class="text"> Patients</span></a>
+                    <a href="{{ url_for('medication') }}"><span class="icon">&#x1F48A;</span><span class="text"> Medication</span></a>
+                    <a href="{{ url_for('appointments') }}"><span class="icon">&#x1F4C5;</span><span class="text"> Appointments</span></a>
+                {% endif %}
+                <a href="{{ url_for('logout') }}"><span class="icon">&#x1f513;</span><span class="text">Logout</span></a>
+            {% else %}
+                <a href="{{ url_for('login') }}"><span class="icon">&#x1F512;</span><span class="text">Login</span></a>
+                <a href="{{ url_for('register') }}"><span class="icon">&#x1f4cb;</span><span class="text">Register</a>
+            {% endif %}
+         </div>
+    </div>
+
+    <div class="background-container"></div>
+
+    <footer>
+        <p>
+        <!-- &copy displays the copyright symbol -->
+            &copy; 2024 Shield Health. All Rights Reserved,
+            except the right to own it, because UNT
+        </p>
+    </footer>
+</body>
+</html>

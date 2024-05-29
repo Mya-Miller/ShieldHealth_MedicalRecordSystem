@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/login/login.css') }}">
+    <title>Register</title>
+    <script>
+            document.addEventListener("DOMContentLoaded", function() {
+            // Check if a success message is present in the URL query parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const invalidMessage = urlParams.get('invalid_message');
+
+            if (invalidMessage) {
+                alert(invalidMessage);
+            }
+
+            // Add event listener for toggling password visibility
+            document.getElementById("show_password").addEventListener("change", function() {
+                var passwordField = document.getElementById("password");
+                if (passwordField.type === "password") {
+                    passwordField.type = "text";
+                } else {
+                    passwordField.type = "password";
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="navbarC">
+         <div class="navbarC-items">
+            <!-- Using Unicodes for collapsable sidebar-->
+           {% if access %}
+                {% if access == 'A' %}
+                    <a href="{{ url_for('patients') }}"><span class="icon">&#x1F465;</span><span class="text"> Patients</span></a>
+                    <a href="{{ url_for('medication') }}"><span class="icon">&#x1F48A;</span><span class="text"> Medication</span></a>
+                    <a href="{{ url_for('appointments') }}"><span class="icon">&#x1F4C5;</span><span class="text"> Appointments</span></a>
+                {% elif access == 'D' %}
+                    <a href="{{ url_for('patients') }}"><span class="icon">&#x1F465;</span><span class="text"> Patients</span></a>
+                    <a href="{{ url_for('medication') }}"><span class="icon">&#x1F48A;</span><span class="text"> Medication</span></a>
+                {% elif access == 'H' %}
+                    <a href="{{ url_for('patients') }}"><span class="icon">&#x1F465;</span><span class="text"> Patients</span></a>
+                    <a href="{{ url_for('medication') }}"><span class="icon">&#x1F48A;</span><span class="text"> Medication</span></a>
+                    <a href="{{ url_for('appointments') }}"><span class="icon">&#x1F4C5;</span><span class="text"> Appointments</span></a>
+                {% endif %}
+                <a href="{{ url_for('logout') }}"><span class="icon">&#x1f513;</span><span class="text">Logout</span></a>
+            {% else %}
+                <a href="{{ url_for('login') }}"><span class="icon">&#x1F512;</span><span class="text">Login</span></a>
+                <a href="{{ url_for('register') }}"><span class="icon">&#x1f4cb;</span><span class="text">Register</a>
+            {% endif %}
+         </div>
+    </div>
+        <header>
+            <h2>Register</h2>
+        </header>
+
+        <div class="registration-container">
+            <form method="POST">
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" name="first_name" pattern="^[A-Za-z'-]+$" title="Name can only contain letters, hyphens, and apostrophes" required><br>
+
+                <label for="last_name">Last Name:</label>
+                <input type="text" id="last_name" name="last_name" pattern="^[A-Za-z'-]+$" title="Name can only contain letters, hyphens, and apostrophes" required><br>
+
+                <label for="account_type">Account Type:</label>
+                <select id="account_type" name="account_type">
+                    <option value="D">Doctor</option>
+                    <option value="H">Hospital Staff</option>
+                </select><br><br>
+
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required><br>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Password must contain at least one number, one uppercase and lowercase letter, and at least 8 or more characters" required><br>
+                 <!-- Checkbox to toggle password visibility -->
+                <input type="checkbox" id="show_password"> <label for="show_password">Show Password</label><br>
+
+                <span id="password-requirements">Password must contain at least one number, one uppercase and lowercase letter, and at least 8 or more characters.</span><br><br>
+
+                <button type="submit">Register</button>
+            </form>
+    </div>
+    <p class="links">Already have an account? <a href="{{ url_for('login') }}">Login here</a>.</p>
+</body>
+</html>
