@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/login/login.css') }}">
+     <script>
+         // Check if a success message is present in the URL query parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const successMessage = urlParams.get('success_message');
+        const invalidMessage = urlParams.get('invalid_message');
+
+        // If a success message is present, display it as an alert
+        if (successMessage) {
+            alert(successMessage);
+        }
+        if (invalidMessage) {
+            alert(invalidMessage);
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h2 class="title">Login</h2>
+    </header>
+
+    <div class="navbarC">
+         <div class="navbarC-items">
+            <!-- Using Unicodes for collapsable sidebar-->
+           {% if access %}
+                {% if access == 'A' %}
+                    <a href="{{ url_for('patients') }}"><span class="icon">&#x1F465;</span><span class="text"> Patients</span></a>
+                    <a href="{{ url_for('medication') }}"><span class="icon">&#x1F48A;</span><span class="text"> Medication</span></a>
+                    <a href="{{ url_for('appointments') }}"><span class="icon">&#x1F4C5;</span><span class="text"> Appointments</span></a>
+                {% elif access == 'D' %}
+                    <a href="{{ url_for('patients') }}"><span class="icon">&#x1F465;</span><span class="text"> Patients</span></a>
+                    <a href="{{ url_for('medication') }}"><span class="icon">&#x1F48A;</span><span class="text"> Medication</span></a>
+                {% elif access == 'H' %}
+                    <a href="{{ url_for('patients') }}"><span class="icon">&#x1F465;</span><span class="text"> Patients</span></a>
+                    <a href="{{ url_for('medication') }}"><span class="icon">&#x1F48A;</span><span class="text"> Medication</span></a>
+                    <a href="{{ url_for('appointments') }}"><span class="icon">&#x1F4C5;</span><span class="text"> Appointments</span></a>
+                {% endif %}
+                <a href="{{ url_for('logout') }}"><span class="icon">&#x1f513;</span><span class="text">Logout</span></a>
+            {% else %}
+                <a href="{{ url_for('login') }}"><span class="icon">&#x1F512;</span><span class="text">Login</span></a>
+                <a href="{{ url_for('register') }}"><span class="icon">&#x1f4cb;</span><span class="text">Register</a>
+            {% endif %}
+         </div>
+    </div>
+
+    <div class="login-container">
+        <form method="POST">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" required><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br><br>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <div class="links">
+        <p>Don't have an account? <a href="{{ url_for('register') }}">Register here</a>.</p>
+        <p>Want to update password? <a href="{{ url_for('changePassword') }}">Change here</a>.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,266 @@
+/* main design */
+:root {
+    /* structure */
+    /* This may need to be applied to all pages so they are here */
+    --header-height: 60px; 
+
+    /* colors */
+    --primary-color: #778da9;
+    --secondary-color: #1b263b;
+    --tertiary-color: #0d1b2a;
+    --darker-supplementary: #415a77;
+    --lighter-supplementary: #e0e1dd;
+    --complementary-color: rgba(158, 115, 67, 0.5);
+
+    /* background */
+
+         /* opacity for softer background, 0.5 looks good */
+         /* I am applying the complementary to the background */
+    --gradient-background: linear-gradient(135deg, var(--complementary-color), #6e92c1 100%);
+   
+    /* fonts */
+    --font-family: 'segoe UI', Tahoma, Geneva, Veranda, sans-serif;
+    
+    --title-font-size: 34px;
+    --h1-font-size: 28px;
+    --h2-font-size: 24px;
+
+    /* got tired just going with this color for now for h2 */
+    --h1-color: #55769d;
+    --h2-color: var(--secondary-color);
+    --header-font-weight: 700;
+    
+    --header-styling: oblique;
+
+
+    /* Glassmorphism specific */
+    --background-glass-effect: rgba(119, 141, 169, 0.5); /* change trasnparency (last value) to change effect intensity -Safe */
+    --border-glass-color: rgba(255, 255, 255, 0.18);
+}
+/* Modular Headers design */
+.title, h1, h2 {
+    padding: 10px 0;
+    color: var(--darker-supplementary);
+
+    font-size: var(--title-font-size);
+    font-family: var(--font-family) ;
+    font-weight: var(--header-font-weight);
+    font-style: var(--header-styling);
+}
+
+h1 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: var(--h1-color);
+    font-size: var(--h1-font-size);
+}
+
+h2 {
+    margin-top: 15px;
+    margin-bottom: 8px;
+
+    color: var(--h1-color);
+    font-size: var(--h2-font-size);
+}
+
+/* Modular Form Design */
+.form-design {
+    background: var(--background-glass-effect);
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--border-glass-color);
+    border-radius: 5px;
+
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: auto;
+}
+
+.form-design input[type="text"],
+.form-design input[type="number"],
+.form-design input[type="datetime"] {
+    padding: 10px;
+    border: 1px solid var(--border-glass-color);
+    border-radius: 5px;
+    /*background: transparent;*/
+    color: var(--secondary-color);
+    margin: 1%;
+}
+
+.form-design button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid var(--border-glass-color);
+    background: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.form-design button:hover {
+    background-color: var(--darker-supplementary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* navbar design */
+.navbarC {
+    /* structure */
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+   
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 2%; /* Initially collapsed width fits icons only */
+    
+    gap: 10px;
+    padding: 1%;
+    padding-top: 6%;
+
+    /* Design */
+    transition: width 0.5s ease;
+
+       /* glass effect */
+    border-right: 1px solid var(--border-glass-color);
+    box-shadow: 4px 4px 24px rgba(0, 0, 0, 0.2);
+    background: var(--background-glass-effect);
+    backdrop-filter: blur(10px);
+
+}
+
+
+.navbarC-items a {
+    /* Structure */
+    display: flex;
+    align-items: center;
+    justify-content: left;
+
+
+    padding: 25%;
+    margin-top: 10%;
+
+    /* design */
+    font-family: var(--font-family);
+    border-radius: 5px;
+    color: var(--tertiary-color);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--border-glass-color);
+  
+
+    white-space: nowrap;
+    overflow: hidden;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    text-decoration: none;
+}
+
+/* expanded navbar */
+
+.navbarC-items a:hover, .navbarC-items a:focus {
+    color: var(--darker-supplementary);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.navbarC:hover, .navbarC:focus-within {
+    width: 15%;
+    .navbarC-items a {
+        padding: 5%;
+        margin-top: 2%;
+    }
+}
+
+.navbarC-items a .icon {
+    margin-right: 10px;
+}
+
+/* moving background design */
+@keyframes movingBackground {
+    0% { background-position: 0 0; }
+    100% { background-position: 100% 0; }
+}
+
+body {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    height: 100vh;
+    margin: 0;
+}
+
+.background-container {
+    /*position: fixed;*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+
+    /* animated background */
+    background-image: url('mountain-and-lake-landscape.jpg');
+    background-size: 120% auto;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    animation: movingBackground 60s linear infinite;
+}
+
+/* addressing background and window size compatibility */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50vh; 
+    margin-top: 0;
+
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.3) 0%, transparent 100%),
+        url('mountain-and-lake-landscape.jpg');
+    background-size: 200%;
+    background-repeat: no-repeat;
+    background-repeat: bottom left;
+
+    animation: movingBackground 60s linear infinite;
+    transform: scaleY(-1);
+    opacity: 0.7;
+    transform: scaleY(-1);
+    filter: blur(8px);
+    z-index: -2;
+}
+
+/* Other elements of the HTML */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    text-align: center;
+    background: var(--background-glass-effect);
+
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background: var(--background-glass-effect);
+    backdrop-filter: blur(10px);
+
+    z-index: 1000;
+    padding: 10px 0;
+}

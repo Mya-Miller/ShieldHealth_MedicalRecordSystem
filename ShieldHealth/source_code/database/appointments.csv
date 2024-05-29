@@ -1,0 +1,4 @@
+ID,Name,Date,Time,Reason,Doctor,HealthIssue,Age,Allergies,Surgery,SmokingStatus,AlcoholConsumption,Exercise,Sleep,Stress,FamilyHistory
+1713306449195,Tyrell C Richardson,2024-04-16,10:30,constipation,dr_jones,Yes,18,diary_wheat,No,No,less_monthly,vigorous,less_than_4,low,none
+1713308981357,Tyrell,2024-05-11,10:10,heart pain,dr_smith,No,12,,No,No,less_monthly,none,less_than_4,low,chrons
+Z5L97XU,Karthik Venkatasivareddy,2024-04-18,13:53,test reason,dr_garcia,No,32,not_listed,Yes,Yes,weekly,light,more_than_8,very_high,
